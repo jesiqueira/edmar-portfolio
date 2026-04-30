@@ -1,0 +1,19 @@
+{
+  "editor.formatOnSave": true,
+
+  // Python
+  "python.formatting.provider": "black",
+  "python.linting.enabled": true,
+  "python.linting.ruffEnabled": true,
+  "python.linting.ruffArgs": ["--fix"],
+  "python.defaultInterpreterPath": ".venv/Scripts/python.exe",
+
+  // HTML + Jinja
+  "files.associations": {
+    "*.html": "html",
+    "*.jinja": "html",
+    "*.jinja2": "html"
+  },
+  "djlint.enableLinting": true,
+  "djlint.formatOnSave": true
+}

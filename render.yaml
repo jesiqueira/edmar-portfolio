@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: portfolio-edmar
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
