@@ -2,6 +2,6 @@ services:
   - type: web
     name: portfolio-edmar
     env: python
-    buildCommand: 'pip install -r requirements.txt'
-    startCommand: "gunicorn 'app:create_app()'"
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn 'app:create_app()'
     plan: free
