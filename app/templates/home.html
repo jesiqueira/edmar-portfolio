@@ -1,12 +1,117 @@
 {% extends "base.html" %}
+{% block title %}Início — Edmar Siqueira{% endblock %}
+{% block description %}
+    Desenvolvedor Python especializado em
+    automação, APIs, sistemas internos e soluções inteligentes para empresas.
+{% endblock %}
+{% block og_title %}Portfólio — Edmar Siqueira{% endblock %}
+{% block og_description %}
+    Conheça meus projetos, serviços e soluções em Python, automação e arquitetura limpa.
+{% endblock %}
+{% block twitter_title %}Início — Edmar Siqueira{% endblock %}
+{% block twitter_description %}
+    Portfólio com projetos reais, automações, APIs e soluções modernas em Python.
+{% endblock %}
 {% block content %}
-    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
-        <h1 class="text-5xl font-bold">Edmar Siqueira</h1>
-        <p class="text-xl mt-4">Desenvolvedor de Sistemas • Python • Node.js • SQL</p>
-        <div class="mt-8 flex gap-4">
-            <a href="/projects" class="px-6 py-3 bg-blue-600 text-white rounded">Ver Projetos</a>
-            <a href="/contact"
-               class="px-6 py-3 border border-blue-600 text-blue-600 rounded">Contato</a>
+    <section class="min-h-[80vh] flex items-center justify-center text-center px-6">
+        <div class="max-w-3xl mx-auto">
+            <!-- Headline -->
+            <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
+                Construindo soluções modernas com
+                <span class="text-sky-400">Python</span>, automação e arquitetura limpa.
+            </h1>
+            <!-- Subheadline -->
+            <p class="text-gray-300 text-lg md:text-xl mt-6 leading-relaxed">
+                Explorando IA aplicada em projetos reais e evoluindo continuamente minhas habilidades.
+            </p>
+            <!-- CTA -->
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/projects"
+                   class="px-8 py-4 bg-sky-600 hover:bg-sky-700 text-white rounded-lg text-lg transition"> Ver Projetos </a>
+                <a href="/contact"
+                   class="px-8 py-4 border border-gray-500 hover:bg-gray-800 text-gray-300 rounded-lg text-lg transition"> Vamos Conversar </a>
+            </div>
         </div>
+    </section>
+    <section class="py-24 px-6 bg-[#0d1117]">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Sobre mim</h2>
+            <p class="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
+                Sou desenvolvedor focado em <span class="text-sky-400 font-semibold">Python</span>, automação e construção de sistemas modernos com arquitetura
+                limpa. Tenho experiência prática integrando APIs, criando soluções internas e aplicando conceitos de IA em projetos reais enquanto evoluo
+                continuamente minhas habilidades.
+            </p>
+            <p class="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto mt-4">
+                Meu objetivo é transformar processos manuais em soluções inteligentes, escaláveis e bem estruturadas — sempre com foco em clareza, organização e
+                eficiência.
+            </p>
+        </div>
+    </section>
+    <section class="py-24 px-6 bg-[#0d1117]">
+        <div class="max-w-6xl mx-auto">
+            <!-- Título -->
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">Projetos em Destaque</h2>
+            <!-- Grid de Projetos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for project in projects[:3] %}
+                    <a href="/projects/{{ project.slug }}"
+                       class="group bg-[#161b22] border border-gray-800 rounded-xl p-6 hover:border-sky-600 transition">
+                        <img src="{{ project.image }}"
+                             alt="{{ project.title }}"
+                             class="rounded-lg mb-4 w-full h-48 object-cover" />
+                        <h3 class="text-xl font-semibold text-white group-hover:text-sky-400 transition">{{ project.title }}</h3>
+                        <p class="text-gray-400 text-sm mt-2">{{ project.description[:120] }}...</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            {% for tag in project.tags[:3] %}
+                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+            <!-- Botão Ver Todos -->
+            <div class="text-center mt-12">
+                <a href="/projects"
+                   class="px-8 py-4 bg-sky-600 hover:bg-sky-700 text-white rounded-lg text-lg transition"> Ver todos os projetos </a>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 px-6 bg-[#0d1117]">
+        <div class="max-w-6xl mx-auto">
+            <!-- Título -->
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">Serviços</h2>
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-[#161b22] border border-gray-800 rounded-xl p-6 hover:border-sky-600/40 transition">
+                    <h3 class="text-xl font-semibold text-white mb-3">Bots e Automações</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Desenvolvimento de automações inteligentes, integrações com APIs, robôs de processos e soluções que reduzem trabalho manual.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-[#161b22] border border-gray-800 rounded-xl p-6 hover:border-sky-600/40 transition">
+                    <h3 class="text-xl font-semibold text-white mb-3">APIs e Integrações</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Criação de APIs modernas com FastAPI e Flask, integrações entre sistemas e comunicação segura entre serviços.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-[#161b22] border border-gray-800 rounded-xl p-6 hover:border-sky-600/40 transition">
+                    <h3 class="text-xl font-semibold text-white mb-3">Sistemas Internos</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Desenvolvimento de sistemas internos, dashboards, gestão de dados e ferramentas corporativas sob medida.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 px-6 bg-[#0d1117] text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Vamos Conversar</h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto mt-4">
+            Se você deseja transformar processos em soluções inteligentes, estou pronto para ajudar a construir algo incrível.
+        </p>
+        <a href="/contact"
+           class="inline-block mt-8 px-10 py-4 bg-sky-600 hover:bg-sky-700 text-white rounded-lg text-lg transition"> Entrar em Contato </a>
     </section>
 {% endblock %}

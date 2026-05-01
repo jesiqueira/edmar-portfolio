@@ -1,32 +1,41 @@
 import json
 import os
-from flask import Blueprint, render_template, abort
+from flask import Blueprint, render_template, redirect
 
 project_detail_bp = Blueprint("project_detail", __name__, url_prefix="/projects")
 
-# Carrega o JSON uma vez
-json_path = os.path.join(os.path.dirname(__file__), "..", "data", "projects.json")
-with open(json_path, "r", encoding="utf-8") as f:
+JSON_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "projects.json")
+
+with open(JSON_PATH, "r", encoding="utf-8") as f:
     PROJECTS = json.load(f)
 
 
-def slugify(text):
-    return (
-        text.lower()
-        .replace("–", "-")
-        .replace("—", "-")
-        .replace(" ", "-")
-        .replace("/", "-")
-        .replace(".", "")
-        .replace(",", "")
-    )
-
-
+# ROTA 1 — Detalhes do projeto (sempre mostra detalhes)
 @project_detail_bp.route("/<slug>")
 def project_detail(slug):
-    # Procura o projeto pelo slug
-    for project in PROJECTS:
-        if slugify(project["title"]) == slug:
-            return render_template("project_detail.html", project=project)
+    project = next((p for p in PROJECTS if p["slug"] == slug), None)
 
-    return abort(404)
+    if not project:
+        return render_template("404.html"), 404
+
+    return render_template("project_detail.html", project=project)
+
+
+# ROTA 2 — Botão GitHub (decide público/privado)
+@project_detail_bp.route("/<slug>/github")
+def project_github(slug):
+    project = next((p for p in PROJECTS if p["slug"] == slug), None)
+
+    if not project:
+        return render_template("404.html"), 404
+
+    # Se for privado → página privada
+    if project.get("private") is True:
+        return render_template("project_private.html", project=project)
+
+    # Se for público → redireciona para o GitHub
+    if project.get("github"):
+        return redirect(project["github"])
+
+    # Se não tiver GitHub → volta para detalhes
+    return redirect(f"/projects/{slug}")

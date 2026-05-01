@@ -1,10 +1,60 @@
 {% extends "base.html" %}
-{% block title %}Serviços - Edmar Siqueira{% endblock %}
+{% block title %}Serviços — Edmar Siqueira{% endblock %}
+{% block description %}
+    Veja os serviços que ofereço: automações, APIs, sistemas internos e landing pages profissionais.
+{% endblock %}
+{% block og_title %}Serviços — Edmar Siqueira{% endblock %}
+{% block og_description %}
+    Conheça os serviços que ofereço em Python, automação, APIs e soluções personalizadas.
+{% endblock %}
+{% block twitter_title %}Serviços — Edmar Siqueira{% endblock %}
+{% block twitter_description %}
+    Serviços profissionais em automação, APIs, sistemas internos e landing pages.
+{% endblock %}
 {% block content %}
-    <h1 class="text-3xl font-bold mb-6">Serviços</h1>
-    <p class="text-slate-300 mb-4">
-        Aqui você poderá ver os serviços que ofereço, como criação de landing pages,
-        automações e soluções personalizadas para pequenas empresas.
-    </p>
-    <p class="text-slate-400">Em breve vamos estilizar essa página com Tailwind.</p>
+    <section class="py-24 px-6 bg-[#0d1117]">
+        <div class="max-w-5xl mx-auto">
+            <!-- Título -->
+            <h1 class="text-4xl md:text-5xl font-bold text-white text-center mb-6">Serviços</h1>
+            <p class="text-gray-400 text-lg text-center max-w-3xl mx-auto mb-16">
+                Aqui estão os serviços que ofereço, com foco em automação, APIs, sistemas internos
+                e soluções personalizadas para empresas e profissionais que buscam eficiência.
+            </p>
+            <!-- Grid de Serviços -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Card 1 -->
+                <div class="bg-[#161b22] border border-gray-800 rounded-xl p-8 hover:border-sky-600/40 transition">
+                    <h3 class="text-2xl font-semibold text-white mb-4">Bots e Automações</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Desenvolvimento de automações inteligentes, robôs de processos, integrações com APIs
+                        e soluções que reduzem trabalho manual e aumentam produtividade.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-[#161b22] border border-gray-800 rounded-xl p-8 hover:border-sky-600/40 transition">
+                    <h3 class="text-2xl font-semibold text-white mb-4">APIs e Integrações</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Criação de APIs modernas com FastAPI e Flask, integrações entre sistemas,
+                        comunicação segura entre serviços e arquitetura escalável.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-[#161b22] border border-gray-800 rounded-xl p-8 hover:border-sky-600/40 transition">
+                    <h3 class="text-2xl font-semibold text-white mb-4">Sistemas Internos</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Desenvolvimento de sistemas internos, dashboards, gestão de dados,
+                        ferramentas corporativas e soluções sob medida.
+                    </p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-[#161b22] border border-gray-800 rounded-xl p-8 hover:border-sky-600/40 transition">
+                    <h3 class="text-2xl font-semibold text-white mb-4">Landing Pages e Sites</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Criação de páginas profissionais, rápidas e responsivas com TailwindCSS,
+                        focadas em conversão e presença digital.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

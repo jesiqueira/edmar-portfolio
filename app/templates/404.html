@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Página não encontrada — Edmar Siqueira{% endblock %}
+{% block description %}A página que você tentou acessar não existe ou foi movida.{% endblock %}
+{% block og_title %}Página não encontrada{% endblock %}
+{% block og_description %}A página solicitada não foi encontrada.{% endblock %}
+{% block twitter_title %}Página não encontrada{% endblock %}
+{% block twitter_description %}A página solicitada não foi encontrada.{% endblock %}
+{% block content %}
+    <section class="py-32 text-center">
+        <h1 class="text-6xl font-bold text-white mb-6">404</h1>
+        <p class="text-gray-400 text-lg mb-10">A página que você está procurando não existe ou foi movida.</p>
+        <a href="/"
+           class="px-8 py-4 bg-sky-600 hover:bg-sky-700 text-white rounded-lg text-lg transition">Voltar ao Início</a>
+    </section>
+{% endblock %}

@@ -1,4 +1,10 @@
 {% extends "base.html" %}
+{% block title %}{{ project.title }} — Edmar Siqueira{% endblock %}
+{% block description %}{{ project.description }}{% endblock %}
+{% block og_title %}{{ project.title }}{% endblock %}
+{% block og_description %}{{ project.description }}{% endblock %}
+{% block twitter_title %}{{ project.title }}{% endblock %}
+{% block twitter_description %}{{ project.description }}{% endblock %}
 {% block content %}
     <section class="max-w-5xl mx-auto py-16 px-6">
         <!-- Título -->
@@ -8,9 +14,9 @@
         <!-- Imagem principal -->
         <img src="{{ project.image }}"
              alt="{{ project.title }}"
-             class="rounded-xl shadow-lg w-full mb-12">
-        <!-- Conteúdo detalhado (HTML manual) -->
-        <article class=" prose prose-invert mx-auto max-w-3xl  prose-headings:text-slate-100 prose-headings:font-bold  prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-2  prose-p:text-slate-300 prose-p:leading-relaxed prose-li:text-slate-300 prose-li:leading-relaxed  prose-strong:text-sky-300  prose-ul:mt-4 prose-ul:mb-6 prose-ol:mt-4 prose-ol:mb-6  prose-img:rounded-xl ">
+             class="rounded-xl shadow-lg w-full mb-12" />
+        <!-- Conteúdo detalhado -->
+        <article class="prose prose-invert mx-auto max-w-3xl prose-headings:text-slate-100 prose-headings:font-bold prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-2 prose-p:text-slate-300 prose-p:leading-relaxed prose-li:text-slate-300 prose-li:leading-relaxed prose-strong:text-sky-300 prose-ul:mt-4 prose-ul:mb-6 prose-ol:mt-4 prose-ol:mb-6 prose-img:rounded-xl">
             {% include project.template %}
         </article>
         <!-- Tecnologias -->
@@ -22,11 +28,10 @@
         </div>
         <!-- Ações -->
         <div class="mt-12 flex gap-4">
-            {% if project.github != "private" %}
-                <a href="{{ project.github }}"
-                   target="_blank"
-                   class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white">Ver no GitHub</a>
-            {% endif %}
+            <!-- Botão GitHub inteligente -->
+            <a href="/projects/{{ project.slug }}/github"
+               class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white">Ver no GitHub</a>
+            <!-- Voltar -->
             <a href="/projects"
                class="px-6 py-3 border border-gray-500 rounded-lg text-gray-300 hover:bg-gray-800">
                 ← Voltar para Projetos

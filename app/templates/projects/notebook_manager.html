@@ -1,22 +1,21 @@
 {% block project_content %}
-    <h2>Visão Geral</h2>
-    <p>
-        O <strong>Notebook Manager – Konecta</strong> é um sistema interno desenvolvido para gestão,
-        monitoramento e auditoria de notebooks corporativos. Ele foi criado para resolver problemas
-        críticos de governança, rastreabilidade e qualidade de dados em um ambiente com milhares de
-        ativos distribuídos.
+    <h2 class="text-2xl font-bold mt-10 mb-4">Visão Geral</h2>
+    <p class="leading-relaxed">
+        O <strong>Notebook Manager – Konecta</strong> é um sistema interno para gestão e auditoria de notebooks corporativos.
+        Ele centraliza informações críticas, melhora a governança operacional e garante rastreabilidade completa entre
+        <strong>Notebook × Usuário</strong>.
     </p>
-    <h2>Objetivo do Sistema</h2>
-    <p>
-        O sistema centraliza informações de inventário, status operacional, histórico de movimentações,
-        usuários responsáveis e conformidade. Ele substitui planilhas manuais e processos fragmentados,
-        garantindo dados confiáveis para tomada de decisão.
+    <h2 class="text-2xl font-bold mt-10 mb-4">Objetivo do Sistema</h2>
+    <p class="leading-relaxed">
+        O sistema substitui planilhas manuais e processos fragmentados, oferecendo uma visão única e confiável do inventário,
+        status técnico, movimentações e conformidade dos equipamentos. Além disso, gera e envia relatórios automáticos para
+        gestores, destacando notebooks fora de conformidade.
     </p>
-    <h2>Arquitetura do Projeto</h2>
-    <p>A arquitetura foi projetada para ser robusta, escalável e fácil de manter:</p>
-    <ul>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Arquitetura do Projeto</h2>
+    <p class="leading-relaxed">A solução foi projetada para ser robusta, escalável e simples de manter:</p>
+    <ul class="list-disc list-inside space-y-2 mt-3">
         <li>
-            <strong>FastAPI</strong> – API principal, endpoints REST e validações
+            <strong>FastAPI</strong> – API principal e regras de negócio
         </li>
         <li>
             <strong>PostgreSQL</strong> – Banco relacional com integridade e auditoria
@@ -34,30 +33,30 @@
             <strong>Jinja2</strong> – Templates dinâmicos para o painel web
         </li>
     </ul>
-    <h2>Principais Funcionalidades</h2>
-    <ul>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Principais Funcionalidades</h2>
+    <ul class="list-disc list-inside space-y-2">
         <li>
-            <strong>Cadastro e inventário completo</strong> de notebooks
+            <strong>Inventário completo</strong> de notebooks
         </li>
         <li>
-            <strong>Histórico de movimentações</strong> por usuário, setor e data
+            <strong>Histórico de movimentações</strong> por usuário e setor
         </li>
         <li>
-            <strong>Dashboard de governança</strong> com indicadores de conformidade
+            <strong>Dashboard de conformidade</strong> com indicadores operacionais
         </li>
         <li>
             <strong>Monitoramento de status</strong> (ativo, manutenção, devolvido, extraviado)
         </li>
         <li>
-            <strong>Controle de responsabilidade</strong> com assinatura digital interna
+            <strong>Controle de responsabilidade</strong> com rastreabilidade
         </li>
         <li>
-            <strong>Relatórios exportáveis</strong> para auditoria
+            <strong>Relatórios exportáveis</strong> e envio automático para gestores
         </li>
     </ul>
-    <h2>Modelagem de Dados</h2>
-    <p>O banco foi estruturado para garantir integridade e rastreabilidade:</p>
-    <ul>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Modelagem de Dados</h2>
+    <p class="leading-relaxed">O banco foi estruturado para garantir integridade e rastreabilidade:</p>
+    <ul class="list-disc list-inside space-y-2 mt-3">
         <li>
             <strong>notebooks</strong> – dados do equipamento
         </li>
@@ -74,40 +73,40 @@
             <strong>setores</strong> – departamentos e unidades
         </li>
     </ul>
-    <h2>Fluxo de Operações</h2>
-    <ol>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Fluxo de Operações</h2>
+    <ol class="list-decimal list-inside space-y-2">
         <li>Cadastro ou importação de notebooks</li>
         <li>Associação a um usuário ou setor</li>
         <li>Registro automático de movimentações</li>
         <li>Atualização de status e conformidade</li>
-        <li>Geração de relatórios e auditorias</li>
+        <li>Geração de relatórios e auditorias (incluindo envio para gestores)</li>
     </ol>
-    <h2>Desafios e Soluções</h2>
-    <h3>1. Dados inconsistentes e duplicados</h3>
-    <p>
-        Solução: <strong>validações automáticas</strong> + normalização de dados + constraints no banco.
+    <h2 class="text-2xl font-bold mt-10 mb-4">Desafios e Soluções</h2>
+    <h3 class="text-xl font-semibold mt-6 mb-2">1. Dados inconsistentes e duplicados</h3>
+    <p class="leading-relaxed">
+        Solução: <strong>validações automáticas</strong>, normalização e constraints no banco.
     </p>
-    <h3>2. Falta de rastreabilidade</h3>
-    <p>
+    <h3 class="text-xl font-semibold mt-6 mb-2">2. Falta de rastreabilidade</h3>
+    <p class="leading-relaxed">
         Solução: <strong>logs completos</strong> de movimentação e status.
     </p>
-    <h3>3. Processos manuais lentos</h3>
-    <p>
+    <h3 class="text-xl font-semibold mt-6 mb-2">3. Processos manuais lentos</h3>
+    <p class="leading-relaxed">
         Solução: <strong>painel web</strong> com filtros, buscas e relatórios instantâneos.
     </p>
-    <h3>4. Governança fraca</h3>
-    <p>
+    <h3 class="text-xl font-semibold mt-6 mb-2">4. Governança fraca</h3>
+    <p class="leading-relaxed">
         Solução: <strong>dashboard de conformidade</strong> com indicadores críticos.
     </p>
-    <h2>Resultados</h2>
-    <ul>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Resultados</h2>
+    <ul class="list-disc list-inside space-y-2">
         <li>Redução de erros de inventário</li>
         <li>Maior controle sobre ativos corporativos</li>
         <li>Processos mais rápidos e auditáveis</li>
         <li>Base sólida para expansão futura</li>
     </ul>
-    <h2>Roadmap</h2>
-    <ul>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Roadmap</h2>
+    <ul class="list-disc list-inside space-y-2">
         <li>Integração com Active Directory</li>
         <li>API para integração com sistemas externos</li>
         <li>Relatórios avançados com BI</li>

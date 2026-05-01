@@ -1,14 +1,14 @@
 {% block project_content %}
-    <h2>Visão Geral</h2>
-    <p>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Visão Geral</h2>
+    <p class="leading-relaxed">
         O <strong>Alpha Bot Trading – US500</strong> é um robô profissional desenvolvido para MetaTrader 5,
         focado no índice <strong>US500</strong>. Ele utiliza uma arquitetura moderna baseada em
-        <strong>SRP (Single Responsibility Principle)</strong>, <strong>Dataclasses</strong> e um conjunto de
-        <strong>estratégias em camadas</strong> para tomada de decisão precisa.
+        <strong>SRP (Single Responsibility Principle)</strong>, <strong>Dataclasses</strong> e
+        <strong>estratégias em camadas</strong> para tomada de decisão precisa e auditável.
     </p>
-    <h2>Arquitetura do Projeto</h2>
-    <p>A estrutura foi projetada para ser modular, escalável e altamente manutenível:</p>
-    <ul>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Arquitetura do Projeto</h2>
+    <p class="leading-relaxed">A estrutura foi projetada para ser modular, escalável e altamente manutenível:</p>
+    <ul class="list-disc list-inside space-y-2 mt-3">
         <li>
             <strong>core/</strong> – Orquestração principal, engine de mercado e monitoramento
         </li>
@@ -31,9 +31,9 @@
             <strong>database/</strong> – Persistência completa em PostgreSQL
         </li>
     </ul>
-    <h2>Estratégia em Camadas</h2>
-    <p>O bot utiliza múltiplas camadas de decisão, priorizando:</p>
-    <ul>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Estratégia em Camadas</h2>
+    <p class="leading-relaxed">O bot utiliza múltiplas camadas de decisão, priorizando:</p>
+    <ul class="list-disc list-inside space-y-2 mt-3">
         <li>
             <strong>Rompimento</strong> – Máxima prioridade
         </li>
@@ -44,28 +44,28 @@
             <strong>M50</strong> – Tendência moderada
         </li>
         <li>
-            <strong>M200</strong> – Suporte/resistência
+            <strong>M200</strong> – Suporte e resistência
         </li>
     </ul>
-    <p>
+    <p class="leading-relaxed mt-4">
         Além disso, conta com filtros avançados como:
-        <strong>Filtro Macro H1</strong>, <strong>RSI Contextual</strong>, <strong>Filtro de Anatomia</strong> e
-        <strong>Detecção de Breakout</strong>.
+        <strong>Filtro Macro H1</strong>, <strong>RSI Contextual</strong>,
+        <strong>Filtro de Anatomia</strong> e <strong>Detecção de Breakout</strong>.
     </p>
-    <h2>IA e Machine Learning</h2>
-    <p>
-        A IA utiliza um agente <strong>XGBoost</strong> para classificar setups com base em dezenas de features
-        técnicas. O pipeline inclui:
+    <h2 class="text-2xl font-bold mt-10 mb-4">IA e Machine Learning</h2>
+    <p class="leading-relaxed">
+        A IA utiliza um agente <strong>XGBoost</strong> para classificar setups com base em dezenas de features técnicas.
+        O pipeline inclui:
     </p>
-    <ul>
+    <ul class="list-disc list-inside space-y-2 mt-3">
         <li>Extração e preparação de dados</li>
         <li>Treinamento supervisionado</li>
         <li>Validação de setups rejeitados</li>
         <li>Dashboard de monitoramento (em desenvolvimento)</li>
     </ul>
-    <h2>Banco de Dados e Auditoria</h2>
-    <p>O PostgreSQL registra:</p>
-    <ul>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Banco de Dados e Auditoria</h2>
+    <p class="leading-relaxed">O PostgreSQL registra:</p>
+    <ul class="list-disc list-inside space-y-2 mt-3">
         <li>
             <strong>master_trades</strong> – Trades executados com todas as features
         </li>
@@ -79,32 +79,32 @@
             <strong>v_analise_completa</strong> – View consolidada para análise
         </li>
     </ul>
-    <h2>Desafios e Soluções</h2>
-    <h3>1. Latência e sincronização</h3>
-    <p>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Desafios e Soluções</h2>
+    <h3 class="text-xl font-semibold mt-6 mb-2">1. Latência e sincronização</h3>
+    <p class="leading-relaxed">
         Solução: <strong>RAM Cache</strong> + sincronização com <strong>MT5.time</strong>.
     </p>
-    <h3>2. Falsos rompimentos</h3>
-    <p>
+    <h3 class="text-xl font-semibold mt-6 mb-2">2. Falsos rompimentos</h3>
+    <p class="leading-relaxed">
         Solução: <strong>Breakout v2</strong> com validação do candle anterior e volume mínimo.
     </p>
-    <h3>3. Excesso de setups rejeitados</h3>
-    <p>
+    <h3 class="text-xl font-semibold mt-6 mb-2">3. Excesso de setups rejeitados</h3>
+    <p class="leading-relaxed">
         Solução: <strong>Cooldown inteligente</strong> + classificação por IA.
     </p>
-    <h3>4. Manutenção do código</h3>
-    <p>
+    <h3 class="text-xl font-semibold mt-6 mb-2">4. Manutenção do código</h3>
+    <p class="leading-relaxed">
         Solução: refatoração completa com <strong>SRP</strong> e <strong>Dataclasses</strong>.
     </p>
-    <h2>Resultados</h2>
-    <ul>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Resultados</h2>
+    <ul class="list-disc list-inside space-y-2">
         <li>Redução de falsos positivos</li>
         <li>Melhor consistência nas entradas</li>
         <li>Auditoria completa de decisões</li>
         <li>Base sólida para evolução da IA</li>
     </ul>
-    <h2>Roadmap</h2>
-    <ul>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Roadmap</h2>
+    <ul class="list-disc list-inside space-y-2">
         <li>Treinamento avançado da IA</li>
         <li>Dashboard de performance</li>
         <li>Shadow Mode (A/B Testing)</li>

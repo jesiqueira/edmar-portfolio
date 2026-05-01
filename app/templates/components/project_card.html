@@ -11,9 +11,11 @@
             {% endfor %}
         </div>
         <div class="flex items-center gap-3 mt-4">
-            <a href="/projects/{{ project.title | lower | replace(' ', '-') | replace('–', '-') | replace('—', '-') }}"
+            <!-- Ver projeto → sempre detalhes -->
+            <a href="/projects/{{ project.slug }}"
                class="text-sm text-sky-400 hover:text-sky-300">Ver projeto →</a>
-            <a href="{{ project.github }}"
+            <!-- GitHub → rota inteligente -->
+            <a href="/projects/{{ project.slug }}/github"
                class="text-sm text-slate-400 hover:text-slate-300">GitHub</a>
         </div>
     </div>

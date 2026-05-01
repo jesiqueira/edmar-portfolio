@@ -1,18 +1,22 @@
 [
   {
     "title": "Notebook Manager – Konecta",
-    "description": "Sistema interno para gestão e monitoramento de notebooks Konecta, com foco em governança, qualidade de dados e apoio à tomada de decisão.",
-    "image": "/static/img/notebook_manager.png",
+    "slug": "notebook-manager-konecta",
+    "description": "Sistema interno para gestão, auditoria e conformidade de notebooks corporativos, com relatórios automáticos para gestores.",
+    "image": "/static/img/notebook_manager.webp",
     "tags": ["FastAPI", "PostgreSQL", "SQLAlchemy", "Docker", "TailwindCSS", "Jinja2"],
-    "github": "private",
+    "github": "https://github.com/algum-repo-ou-vazio",
+    "private": true,
     "template": "projects/notebook_manager.html"
   },
   {
     "title": "Alpha Bot Trading – US500",
-    "description": "Robô de trading profissional para MetaTrader 5 com arquitetura SRP, múltiplas estratégias, IA com XGBoost e banco PostgreSQL para auditoria completa.",
+    "slug": "alpha-bot-trading-us500",
+    "description": "Robô profissional para MetaTrader 5 com estratégias em camadas, IA e auditoria completa de decisões",
     "image": "/static/img/alpha_bot_card.webp",
     "tags": ["Python", "MetaTrader 5", "FastAPI", "PostgreSQL", "Docker", "XGBoost", "SRP Architecture", "Dataclass"],
-    "github": "private",
+    "github": "https://github.com/algum-repo-ou-vazio",
+    "private": true,
     "template": "projects/alpha_bot.html"
   }
 ]
