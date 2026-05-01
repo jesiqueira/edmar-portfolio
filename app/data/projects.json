@@ -1,7 +1,7 @@
 [
   {
-    "title": "Notebook Manager – Konecta",
-    "slug": "notebook-manager-konecta",
+    "title": "Notebook Manager",
+    "slug": "notebook-manager",
     "description": "Sistema interno para gestão, auditoria e conformidade de notebooks corporativos, com relatórios automáticos para gestores.",
     "image": "/static/img/notebook_manager.webp",
     "tags": ["FastAPI", "PostgreSQL", "SQLAlchemy", "Docker", "TailwindCSS", "Jinja2"],
