@@ -39,6 +39,9 @@
               href="/static/img/favicon-social.webp">
         <!-- Tailwind -->
         <script src="https://cdn.tailwindcss.com"></script>
+        <!-- CSS customizado -->
+        <link rel="stylesheet"
+              href="{{ url_for('static', filename='css/main.css') }}">
     </head>
     <body class="bg-slate-950 text-slate-100">
         <!-- NAVBAR COM DEGRADÊ + SCROLL EFFECT -->
@@ -90,7 +93,7 @@
             </div>
         </header>
         <!-- CONTEÚDO DAS PÁGINAS -->
-        <main class="max-w-5xl mx-auto px-4 pt-28">
+        <main class="page-fade max-w-5xl mx-auto px-4 pt-28">
             {% block content %}{% endblock %}
         </main>
         <!-- FOOTER -->

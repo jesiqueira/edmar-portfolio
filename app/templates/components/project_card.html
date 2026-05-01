@@ -4,6 +4,14 @@
          alt="Imagem do projeto" />
     <div class="p-4">
         <h2 class="text-lg font-semibold text-slate-100">{{ project.title }}</h2>
+        <!-- BADGE AQUI -->
+        <div class="mt-2">
+            {% if project.private %}
+                <span class="text-xs bg-red-600/20 text-red-400 px-2 py-1 rounded">🔒 Privado</span>
+            {% else %}
+                <span class="text-xs bg-green-600/20 text-green-400 px-2 py-1 rounded">🔓 Público</span>
+            {% endif %}
+        </div>
         <p class="text-slate-400 text-sm mt-1">{{ project.description }}</p>
         <div class="flex flex-wrap gap-2 mt-3">
             {% for tag in project.tags %}
