@@ -13,7 +13,7 @@ with open(JSON_PATH, "r", encoding="utf-8") as f:
 # ROTA 1 — Detalhes do projeto (sempre mostra detalhes)
 @project_detail_bp.route("/<slug>")
 def project_detail(slug):
-    project = next((p for p in PROJECTS if p["slug"] == slug), None)
+    project = next((p for p in PROJECTS if p["slug"].lower() == slug.lower()), None)
 
     if not project:
         return render_template("404.html"), 404
@@ -24,7 +24,7 @@ def project_detail(slug):
 # ROTA 2 — Botão GitHub (decide público/privado)
 @project_detail_bp.route("/<slug>/github")
 def project_github(slug):
-    project = next((p for p in PROJECTS if p["slug"] == slug), None)
+    project = next((p for p in PROJECTS if p["slug"].lower() == slug.lower()), None)
 
     if not project:
         return render_template("404.html"), 404

@@ -1,0 +1,56 @@
+{% block project_content %}
+    <h2 class="text-2xl font-bold mt-10 mb-4">Visão Geral</h2>
+    <p class="leading-relaxed">
+        O <strong>Portfolio Manager – Edmar</strong> é o sistema que desenvolvi para gerenciar meu portfólio
+        de forma dinâmica, modular e escalável. Ele organiza projetos, gera páginas automaticamente,
+        aplica animações suaves e mantém uma arquitetura limpa baseada em boas práticas de desenvolvimento.
+    </p>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Arquitetura do Projeto</h2>
+    <p class="leading-relaxed">
+        O projeto segue o princípio <strong>SRP (Single Responsibility Principle)</strong>, garantindo que cada módulo
+        tenha uma responsabilidade única e bem definida. Isso facilita manutenção, testes e evolução do código.
+    </p>
+    <ul class="list-disc list-inside space-y-2 mt-3">
+        <li>
+            <strong>routes/</strong> – Rotas separadas por contexto (home, projetos, contato, SEO)
+        </li>
+        <li>
+            <strong>templates/</strong> – Componentes reutilizáveis e páginas dinâmicas
+        </li>
+        <li>
+            <strong>static/</strong> – CSS, JS e imagens organizados
+        </li>
+        <li>
+            <strong>data/</strong> – Estrutura para carregar projetos via JSON
+        </li>
+        <li>
+            <strong>services/</strong> – Camada preparada para futuras integrações
+        </li>
+    </ul>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Tecnologias Utilizadas</h2>
+    <ul class="list-disc list-inside space-y-2 mt-3">
+        <li>Python + Flask</li>
+        <li>Jinja2</li>
+        <li>TailwindCSS</li>
+        <li>HTML/CSS</li>
+        <li>JavaScript</li>
+        <li>Arquitetura Limpa + SRP</li>
+    </ul>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Destaques do Sistema</h2>
+    <ul class="list-disc list-inside space-y-2 mt-3">
+        <li>Cards animados com stagger</li>
+        <li>Fade-in global nas páginas</li>
+        <li>Templates dinâmicos para cada projeto</li>
+        <li>SEO configurado com Open Graph e Twitter Cards</li>
+        <li>Navbar com efeito de scroll e blur</li>
+        <li>Design responsivo e moderno</li>
+    </ul>
+    <h2 class="text-2xl font-bold mt-10 mb-4">Repositório Público</h2>
+    <p class="leading-relaxed">
+        O código-fonte está disponível no GitHub:
+        <a href="https://github.com/jesiqueira/edmar-portfolio"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="text-sky-400 hover:underline">github.com/jesiqueira/edmar-portfolio</a>
+    </p>
+{% endblock %}

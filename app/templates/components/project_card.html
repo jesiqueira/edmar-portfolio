@@ -19,12 +19,25 @@
             {% endfor %}
         </div>
         <div class="flex items-center gap-3 mt-4">
-            <!-- Ver projeto → sempre detalhes -->
-            <a href="/projects/{{ project.slug }}"
-               class="text-sm text-sky-400 hover:text-sky-300">Ver projeto →</a>
-            <!-- GitHub → rota inteligente -->
-            <a href="/projects/{{ project.slug }}/github"
-               class="text-sm text-slate-400 hover:text-slate-300">GitHub</a>
+            <div class="flex items-center gap-3 mt-4">
+                <!-- Ver projeto → sempre detalhes -->
+                <a href="/projects/{{ project.slug }}"
+                   class="text-sm text-sky-400 hover:text-sky-300">Ver projeto →</a>
+                <!-- GitHub inteligente -->
+                {% if not project.private %}
+                    <!-- Projeto público → abre GitHub em nova aba -->
+                    <a href="{{ project.github }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="text-sm text-slate-400 hover:text-slate-300 flex items-center gap-1">
+                        GitHub <span class="text-xs">↗</span>
+                    </a>
+                {% else %}
+                    <!-- Projeto privado → abre página privada -->
+                    <a href="/projects/{{ project.slug }}/github"
+                       class="text-sm text-slate-400 hover:text-slate-300">GitHub</a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>

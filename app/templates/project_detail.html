@@ -35,8 +35,17 @@
         <!-- Ações -->
         <div class="mt-12 flex gap-4">
             <!-- Botão GitHub inteligente -->
-            <a href="/projects/{{ project.slug }}/github"
-               class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white">Ver no GitHub</a>
+            {% if not project.private %}
+                <!-- Projeto público → abre GitHub em nova aba -->
+                <a href="{{ project.github }}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white">Ver no GitHub <span class="text-lg">↗</span></a>
+            {% else %}
+                <!-- Projeto privado → abre página privada -->
+                <a href="/projects/{{ project.slug }}/github"
+                   class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white">Ver no GitHub</a>
+            {% endif %}
             <!-- Voltar -->
             <a href="/projects"
                class="px-6 py-3 border border-gray-500 rounded-lg text-gray-300 hover:bg-gray-800">

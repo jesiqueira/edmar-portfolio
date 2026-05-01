@@ -18,5 +18,15 @@
     "github": "https://github.com/algum-repo-ou-vazio",
     "private": true,
     "template": "projects/alpha_bot.html"
+  },
+  {
+    "title": "Portfolio Manager – Edmar",
+    "slug": "portfolio-manager",
+    "description": "Sistema completo para gerenciamento do meu portfólio, com arquitetura modular e SRP.",
+    "image": "/static/img/dashboard-portifolio.webp",
+    "tags": ["Python", "Flask", "TailwindCSS", "Arquitetura Limpa", "SRP"],
+    "github": "https://github.com/jesiqueira/edmar-portfolio",
+    "private": false,
+    "template": "projects/portfolio_manager.html"
   }
 ]
